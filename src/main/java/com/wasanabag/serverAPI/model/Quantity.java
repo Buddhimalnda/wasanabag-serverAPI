@@ -20,6 +20,7 @@ public class Quantity {
     private String code;
     private int quantity;
     private String unit;
+    private String type;
     private TimeAt createdAt;
     private List<TimeAt> updatedAt;
 }

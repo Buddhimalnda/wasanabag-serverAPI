@@ -28,7 +28,7 @@ public class ItemService {
 
 
 
-    public Message<List<Item>> getAllItems() {
+    public List<Item> getAllItems() {
 
 //        User user = userRepository.findByEmail(new Auth(jwtService, userDetailsService).getUser(req)).orElseThrow();
         loggerService.createLogger(
@@ -52,7 +52,7 @@ public class ItemService {
                         new TimeAt(new Date().getTime()+"",new Date().getDate()+"", "BySystem")
                 )
         );
-        return message;
+        return itemRepository.findAll();
     }
 
     public Item addItem(Item item) {

@@ -12,6 +12,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @RestController
+@CrossOrigin(value = "http://localhost:3000")
 @RequestMapping("/api/v1/quantity")
 public class QuantityController {
     private final QuantityService quantityService;

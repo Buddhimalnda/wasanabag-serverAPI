@@ -21,12 +21,19 @@ public class QuantityService {
 
     public Quantity createQuantity(Quantity quantity) {
         //
+        if (quantityRepository.findByCode(quantity.getCode()).isPresent()) {
+            return updateQuantity(quantity);
+        }
         return quantityRepository.save(quantity);
     }
 
     public Quantity updateQuantity(Quantity quantity) {
         Quantity existingQuantity = quantityRepository.findByCode(quantity.getCode()).orElseThrow(null);
-        existingQuantity.setQuantity(quantity.getQuantity());
+        if (quantity.getType().equals("ADD"))
+            existingQuantity.setQuantity(existingQuantity.getQuantity() + quantity.getQuantity());
+        else
+            existingQuantity.setQuantity(existingQuantity.getQuantity() - quantity.getQuantity());
+
         existingQuantity.setUnit(quantity.getUnit());
         return quantityRepository.save(existingQuantity);
     }

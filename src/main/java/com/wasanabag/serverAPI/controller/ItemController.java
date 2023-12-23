@@ -20,7 +20,7 @@ import java.util.Optional;
 public class ItemController {
     private final ItemService itemService;
     @GetMapping("/all")
-    public Message<List<Item>> getAllItems(){
+    public List<Item> getAllItems(){
         return itemService.getAllItems();
     }
     @PostMapping("/")
