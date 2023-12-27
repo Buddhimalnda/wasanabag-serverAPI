@@ -1,4 +1,4 @@
-package com.wasanabag.serverAPI;
+package com.wasanabag.serverAPI.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
