@@ -1,10 +1,10 @@
 package com.wasanabag.serverAPI;
 
 import com.wasanabag.serverAPI.model.Item;
+import com.wasanabag.serverAPI.model.Order;
 import com.wasanabag.serverAPI.repository.ItemRepository;
-import com.wasanabag.serverAPI.types.ItemCategory;
-import com.wasanabag.serverAPI.types.ItemSize;
-import com.wasanabag.serverAPI.types.TimeAt;
+import com.wasanabag.serverAPI.repository.OrderRepository;
+import com.wasanabag.serverAPI.types.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,7 +22,7 @@ public class ServerApiApplication {
 	}
 
 	@Bean
-	CommandLineRunner runner(ItemRepository itemRepository,
+	CommandLineRunner runner(ItemRepository itemRepository, OrderRepository orderRepository,
 							 MongoTemplate mongoTemplate) {
 		return args -> {
 //			Student stu = new Student("Buddhi Malinda", "PE/2", "buddhimalinda66@gmail.com", "123456", Gender.MALE);
@@ -76,6 +76,21 @@ public class ServerApiApplication {
 					))
 			);
 //			itemRepository.insert(item);
+			//inserting order
+			Order order = new Order(
+					List.of(new Orderlist<>(item, 2), new Orderlist<>(item, 3), new Orderlist<>(item,3)),
+					new Date().getDate() + "",
+					new Date().getTime() + "",
+					"Rukmale, Pannipitiya",
+					"0786677915",
+					"buddhimalinda66@gmail",
+					"Buddhi Malinda",
+					PaymentType.CASH,
+					PaymentStatus.PAID,
+					OrderStatus.PENDING,
+					"Note"
+			);
+//			orderRepository.insert(order);
 		};
 	}
 }

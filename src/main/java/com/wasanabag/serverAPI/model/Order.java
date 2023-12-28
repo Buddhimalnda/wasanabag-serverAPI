@@ -1,8 +1,10 @@
 package com.wasanabag.serverAPI.model;
 
+import com.wasanabag.serverAPI.servicer.ItemService;
 import com.wasanabag.serverAPI.types.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,6 +13,7 @@ import java.util.List;
 @Data
 @Document(collection = "order")
 @AllArgsConstructor
+@NoArgsConstructor
 public class Order {
     @Id
     private String id;
@@ -39,9 +42,9 @@ public class Order {
         this.name = name;
         this.paymentType = paymentType;
         this.note = note;
-        for (Orderlist<Item, Integer> order : list) {
-            this.total += ((order.getX().getPrice()) * order.getY());
-        }
+        this.total = 0;
+
     }
+
 
 }

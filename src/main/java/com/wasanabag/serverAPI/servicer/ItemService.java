@@ -28,6 +28,7 @@ public class ItemService {
 
 
 
+
     public List<Item> getAllItems() {
 
 //        User user = userRepository.findByEmail(new Auth(jwtService, userDetailsService).getUser(req)).orElseThrow();

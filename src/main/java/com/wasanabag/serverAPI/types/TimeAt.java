@@ -5,7 +5,6 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-
 public class TimeAt {
     private String time;
     private String date;

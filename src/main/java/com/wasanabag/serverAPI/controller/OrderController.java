@@ -12,6 +12,8 @@ import java.util.Optional;
 @Data
 @AllArgsConstructor
 @RestController
+@CrossOrigin(value = "http://localhost:8081")
+//@CrossOrigin(value = "http://localhost:3000")
 @RequestMapping("/api/v1/order")
 public class OrderController {
     private final OrderService orderService;
@@ -26,7 +28,7 @@ public class OrderController {
     }
 
     @GetMapping("/check/id/{id}")
-    public Order checkOrderById(@PathVariable String id){
+    public Optional<Order> checkOrderById(@PathVariable String id){
         return orderService.checkOrderById(id);
     }
     @GetMapping("/check/date/{date}")

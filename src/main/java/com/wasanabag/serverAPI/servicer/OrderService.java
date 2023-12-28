@@ -25,8 +25,8 @@ public class OrderService {
         return orderRepository.save(order);
     }
 
-    public Order checkOrderById(String id) {
-        return orderRepository.findById(id).orElse(null);
+    public Optional<Order> checkOrderById(String id) {
+        return orderRepository.findById(id);
     }
 
     public List<Optional<Order>> checkOrderByDate(String date) {
