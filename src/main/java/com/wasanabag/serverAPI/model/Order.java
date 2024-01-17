@@ -43,7 +43,6 @@ public class Order {
         this.paymentType = paymentType;
         this.note = note;
         this.total = 0;
-
     }
 
 

@@ -1,5 +1,6 @@
 package com.wasanabag.serverAPI.types;
 
+
 public class Company {
     public static final String name = "WASANA BAG";
     public static final String address = "No. 174/8, Rukmale, Pannipitiya";

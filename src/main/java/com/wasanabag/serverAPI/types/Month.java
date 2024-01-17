@@ -1,2 +1,5 @@
-package com.wasanabag.serverAPI.types;public enum Month {
+package com.wasanabag.serverAPI.types;
+
+public enum Month {
+    January, February, March, April, May, June, July, August, September, October, November, December
 }
